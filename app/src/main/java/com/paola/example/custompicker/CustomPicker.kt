@@ -16,7 +16,8 @@ import android.widget.Scroller
 import java.util.*
 
 
-class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs), Runnable, ICustomPicker {
+class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs), Runnable,
+    ICustomPicker {
 
     /**
      * @see OnChangeListener.onScrollStateChanged
@@ -48,7 +49,7 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
      */
     val ALIGN_RIGHT = 2
 
-    private lateinit var mHandler: Handler
+    private var mHandler: Handler = Handler()
 
     private var mPaint: Paint? = null
     private var mScroller: Scroller? = null
@@ -686,10 +687,11 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
             var position = (-mScrollOffsetY / mItemHeight + mSelectedItemPosition) % mData!!.size
             position = if (position < 0) position + mData!!.size else position
             mCurrentItemPosition = position
-            if (null != mOnItemSelectedListener && isTouchTriggered) mOnItemSelectedListener!!.onItemSelected(
-                this,
-                mData!![position], position
-            )
+            if (null != mOnItemSelectedListener && isTouchTriggered)
+                mOnItemSelectedListener!!.onItemSelected(
+                    this,
+                    mData!![position], position
+                )
             if (null != mOnChangeListener && isTouchTriggered) {
                 mOnChangeListener!!.onSelected(position)
                 mOnChangeListener!!.onScrollStateChanged(SCROLL_STATE_IDLE)
@@ -773,7 +775,6 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
         if (null == data) throw NullPointerException("CustomPicker's data can not be null!")
         mData = data
 
-        // 重置位置
         if (mSelectedItemPosition > data.size - 1 || mCurrentItemPosition > data.size - 1) {
             mCurrentItemPosition = data.size - 1
             mSelectedItemPosition = mCurrentItemPosition

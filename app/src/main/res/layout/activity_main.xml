@@ -4,15 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.paola.example.custompicker.CustomPicker
+        android:id="@+id/main_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:background="#E5DEEB"
+        custom:custom_picker_atmospheric="true"
+        custom:custom_picker_curved="true"
+        custom:custom_picker_cyclic="true"
+        custom:custom_picker_item_align="right"
+        custom:custom_picker_item_text_color="#A7A7DB"
+        custom:custom_picker_item_text_size="24sp"
+        custom:custom_picker_selected_item_text_color="#536D8A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
