@@ -267,7 +267,7 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
                 )
                 mItemTextSize = getDimensionPixelSize(
                     R.styleable.CustomPicker_custom_picker_item_text_size,
-                    resources.getDimensionPixelSize(R.dimen.ItemTextSize)
+                    resources.getDimensionPixelSize(R.dimen.custom_picker_item_text_size)
                 )
                 mVisibleItemCount =
                     getInt(R.styleable.CustomPicker_custom_picker_visible_item_count, 7)
@@ -283,7 +283,7 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
                     getColor(R.styleable.CustomPicker_custom_picker_item_text_color, -0x777778)
                 mItemSpace = getDimensionPixelSize(
                     R.styleable.CustomPicker_custom_picker_item_space,
-                    resources.getDimensionPixelSize(R.dimen.ItemSpace)
+                    resources.getDimensionPixelSize(R.dimen.custom_picker_item_space)
                 )
                 isCyclic = getBoolean(R.styleable.CustomPicker_custom_picker_cyclic, false)
                 hasIndicator = getBoolean(R.styleable.CustomPicker_custom_picker_indicator, false)
@@ -291,7 +291,7 @@ class CustomPicker(context: Context, attrs: AttributeSet) : View(context, attrs)
                     getColor(R.styleable.CustomPicker_custom_picker_indicator_color, -0x11cccd)
                 mIndicatorSize = getDimensionPixelSize(
                     R.styleable.CustomPicker_custom_picker_indicator_size,
-                    resources.getDimensionPixelSize(R.dimen.IndicatorSize)
+                    resources.getDimensionPixelSize(R.dimen.custom_picker_indicator_size)
                 )
                 hasCurtain = getBoolean(R.styleable.CustomPicker_custom_picker_curtain, false)
                 mCurtainColor =

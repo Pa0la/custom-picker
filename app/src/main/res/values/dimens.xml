@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="ItemTextSize">24sp</dimen>
-    <dimen name="ItemSpace">12dp</dimen>
-    <dimen name="IndicatorSize">2dp</dimen>
-    <dimen name="Margins">8dp</dimen>
+    <dimen name="custom_picker_item_text_size">24sp</dimen>
+    <dimen name="custom_picker_item_space">12dp</dimen>
+    <dimen name="custom_picker_indicator_size">2dp</dimen>
+    <dimen name="custom_picker_margins">8dp</dimen>
 </resources>
